@@ -6,131 +6,290 @@
 <title>Samra Ayele</title>
 <meta name="description" content="Samra Ayele — faith, family, career, and the podcast I'm building.">
 <meta name="robots" content="index, follow">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314213D'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='700' fill='%232A9D8F' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1F3A'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23E7B24A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   :root{
-    --navy:#14213D; --slate:#1A2B4C; --teal:#2A9D8F; --amber:#C97A2B;
-    --green:#078930; --yellow:#FCDD09; --red:#DA121A;
-    --bg:#F7F8FA; --card:#FFFFFF; --text:#1F2430; --text2:#5B6472; --border:#E2E5EA;
-    --radius:14px; --maxw:780px;
+    --navy:#0B1F3A; --navy2:#122A4E; --gold:#E7B24A; --emerald:#0F6B4F;
+    --terracotta:#C1502E; --bg:#FBF8F3; --card:#FFFFFF; --text:#1C2230; --text2:#5A6274;
+    --border:#E8E2D6; --maxw:900px;
     font-size:16px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0; background:var(--bg); color:var(--text);
-    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.7;
+    font-family:'Inter',-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.75;
   }
-  .flag-bar{height:6px; background:linear-gradient(90deg,var(--green) 0 33%,var(--yellow) 33% 66%,var(--red) 66% 100%);}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:56px 24px 96px;}
-  .avatar{
-    width:88px; height:88px; border-radius:50%; background:linear-gradient(135deg,var(--teal),var(--navy));
-    display:flex; align-items:center; justify-content:center; color:#fff; font-size:2rem; font-weight:800;
-    margin-bottom:28px;
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif; color:var(--navy); letter-spacing:-.01em;}
+  a{color:var(--emerald);}
+  ::selection{background:var(--gold); color:var(--navy);}
+
+  /* NAV */
+  .nav{
+    position:sticky; top:0; z-index:50; background:rgba(251,248,243,.88); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
   }
-  h1{font-size:2.4rem; font-weight:800; letter-spacing:-.02em; color:var(--slate); margin:0 0 .2em;}
-  .tagline{color:var(--text2); font-size:1.15rem; margin:0 0 2.5em;}
-  nav.toc{display:flex; flex-wrap:wrap; gap:10px 18px; margin-bottom:3em; padding:0; list-style:none;}
-  nav.toc a{color:var(--teal); text-decoration:none; font-weight:600; font-size:.92rem;}
-  nav.toc a:hover{text-decoration:underline;}
-  h2{font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--teal); margin:2.4em 0 .6em; scroll-margin-top:20px;}
-  h3{font-size:1.05rem; font-weight:700; color:var(--slate); margin:1.2em 0 .3em;}
-  p{margin:0 0 1.1em; font-size:1.05rem;}
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .nav-brand{font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:1.15rem; color:var(--navy); text-decoration:none;}
+  .nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0; flex-wrap:wrap;}
+  .nav-links a{color:var(--text2); text-decoration:none; font-size:.88rem; font-weight:600; letter-spacing:.02em; padding-bottom:4px; border-bottom:2px solid transparent; transition:color .2s, border-color .2s;}
+  .nav-links a:hover{color:var(--navy); border-color:var(--gold);}
+
+  /* HERO */
+  .hero{
+    position:relative; overflow:hidden;
+    background:radial-gradient(1200px 500px at 15% -10%, #16335c 0%, var(--navy) 55%, #081527 100%);
+    color:#fff; padding:100px 24px 120px;
+  }
+  .hero::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
+    background:linear-gradient(90deg,var(--emerald) 0 33%, var(--gold) 33% 66%, var(--terracotta) 66% 100%);
+  }
+  .hero-inner{max-width:var(--maxw); margin:0 auto; position:relative;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:.16em;
+    font-size:.72rem; font-weight:700; color:var(--gold); margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold);}
+  .hero h1{
+    color:#fff; font-size:clamp(2.6rem, 6vw, 4.4rem); font-weight:900; line-height:1.02; margin:0 0 .3em; letter-spacing:-.02em;
+  }
+  .hero h1 em{color:var(--gold); font-style:normal;}
+  .hero p.lead{
+    max-width:560px; color:#C9D2E3; font-size:1.15rem; margin:0 0 34px; font-weight:400;
+  }
+  .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:100px;
+    font-weight:700; font-size:.92rem; text-decoration:none; transition:transform .15s, box-shadow .15s;
+  }
+  .btn-primary{background:var(--gold); color:var(--navy);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(231,178,74,.35);}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.35); color:#fff;}
+  .btn-outline:hover{border-color:#fff; transform:translateY(-2px);}
+
+  /* CONTENT */
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{padding:84px 0;}
+  section.tint{background:#F4EEE1;}
+  .section-head{margin-bottom:36px; max-width:640px;}
+  .section-num{
+    font-family:'Fraunces',Georgia,serif; font-size:.85rem; font-weight:700; color:var(--gold);
+    -webkit-text-stroke:1px var(--navy); text-stroke:1px var(--navy);
+  }
+  .section-head h2{font-size:clamp(1.8rem,3.5vw,2.4rem); margin:.2em 0 .35em; font-weight:700;}
+  .section-head p{color:var(--text2); font-size:1.05rem; margin:0;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
   .card{
-    background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
-    padding:24px 28px; margin-bottom:1.1em;
+    background:var(--card); border:1px solid var(--border); border-radius:18px;
+    padding:32px 34px; margin-bottom:20px; box-shadow:0 1px 2px rgba(20,20,20,.03);
+    transition:box-shadow .2s, transform .2s;
   }
+  .card:hover{box-shadow:0 16px 32px rgba(20,20,20,.06); transform:translateY(-2px);}
+  .card p{margin:0 0 1.05em; font-size:1.03rem;}
+  .card p:last-child{margin-bottom:0;}
+  .card h3{font-size:1.1rem; margin:1.1em 0 .3em; font-weight:600;}
+
+  .pull{
+    border-left:3px solid var(--gold); padding-left:20px; margin:24px 0; font-family:'Fraunces',Georgia,serif;
+    font-size:1.25rem; font-weight:500; color:var(--navy); font-style:italic; line-height:1.5;
+  }
+
+  .stat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:18px; margin:28px 0 8px;}
+  .stat{background:var(--navy); color:#fff; border-radius:16px; padding:22px 20px;}
+  .stat .num{font-family:'Fraunces',Georgia,serif; font-size:1.9rem; font-weight:800; color:var(--gold);}
+  .stat .label{font-size:.82rem; color:#C9D2E3; margin-top:4px;}
+
+  table{width:100%; border-collapse:collapse; margin:1.4em 0 .5em; font-size:.94rem;}
+  th,td{text-align:left; padding:12px 14px; border-bottom:1px solid var(--border);}
+  th{color:var(--text2); font-weight:700; text-transform:uppercase; font-size:.7rem; letter-spacing:.06em;}
+  tr:hover td{background:#FAF6EC;}
+  .note{font-size:.88rem; color:var(--text2); margin-top:1em; font-style:italic;}
+
+  .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0;}
+  .pill{background:#fff; border:1px solid var(--border); border-radius:100px; padding:9px 18px; font-size:.9rem; font-weight:600; color:var(--navy);}
+
   .placeholder{
-    border:1.5px dashed var(--border); border-radius:var(--radius); padding:20px 26px;
-    color:var(--text2); font-style:italic; background:transparent;
+    border:1.5px dashed #C9BFA4; border-radius:16px; padding:22px 26px;
+    color:var(--text2); font-style:italic; background:#FAF6EC;
   }
-  .placeholder::before{ content:"✏️ "; font-style:normal; }
-  table{width:100%; border-collapse:collapse; margin:1em 0 0.5em; font-size:.95rem;}
-  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--border);}
-  th{color:var(--text2); font-weight:700; text-transform:uppercase; font-size:.72rem; letter-spacing:.05em;}
-  .note{font-size:.9rem; color:var(--text2); margin-top:.8em;}
-  ul.plain{margin:0 0 1.1em; padding-left:1.2em;}
-  ul.plain li{margin-bottom:.4em; font-size:1.05rem;}
-  hr{border:none; border-top:1px solid var(--border); margin:2.5em 0;}
-  footer{margin-top:3em; color:var(--text2); font-size:.9rem;}
+  .placeholder::before{content:"✏️ "; font-style:normal;}
+
+  footer{
+    background:var(--navy); color:#C9D2E3; padding:48px 24px; text-align:center; font-size:.92rem;
+  }
+  footer strong{color:#fff;}
+
+  @media (max-width:640px){
+    .nav-links{display:none;}
+    .hero{padding:72px 20px 88px;}
+    section{padding:56px 0;}
+  }
 </style>
 </head>
 <body>
-<div class="flag-bar"></div>
-<div class="wrap">
 
-  <div class="avatar">S</div>
-  <h1>Hi, I'm Samra.</h1>
-  <p class="tagline">Faith, family, and the work I'm building, all in one place.</p>
-
-  <ul class="toc">
-    <li><a href="#story">My Story</a></li>
-    <li><a href="#faith">Faith and Church</a></li>
-    <li><a href="#family">Family</a></li>
-    <li><a href="#podcast">Podcast</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#interests">Interests</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-  <h2 id="story">Welcome / My Story</h2>
-  <div class="card">
-    <p>My name is Samra Ayele. I'm Ethiopian Orthodox Christian, a father, a brother, and someone who has worked hard to grow through education and service. This page is where I bring the different parts of my life together: my faith, my family, the work I do, and the podcast I'm building. My daughter Liya, my church community, and my relationship with my brother Yared matter to me as much as anything I've accomplished professionally, and I wanted a place that reflects that.</p>
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">Samra Ayele</a>
+      <ul class="nav-links">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#faith">Faith</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </div>
 
-  <h2 id="faith">Faith and Church</h2>
-  <div class="card">
-    <p>My faith is Ethiopian Orthodox Christianity, and it shapes how I try to live. I volunteer with St. Gabriel Church in Columbus.</p>
-    <h3>The Fasts of the Ethiopian Orthodox Tewahedo Church</h3>
-    <p>Fasting isn't just tradition in our Church, it's a spiritual discipline tied to specific moments in our faith. There are seven major fasting periods each year:</p>
-    <table>
-      <tr><th>Fast</th><th>2026 dates</th><th>What it commemorates</th></tr>
-      <tr><td>Great Lent (Abiy Tsom)</td><td>Feb 16 – Apr 11</td><td>55 days of preparation before Fasika (Easter), including Holy Week</td></tr>
-      <tr><td>Fast of the Apostles</td><td>~Jun 1 – Jul 12</td><td>The apostles fasting and praying before setting out to preach the Gospel</td></tr>
-      <tr><td>Fast of the Assumption (Filseta)</td><td>Aug 7 – 21/22</td><td>Honoring the Virgin Mary and her assumption</td></tr>
-      <tr><td>Fast of Nineveh (Tsome Nenewe)</td><td>A few weeks before Lent</td><td>The prophet Jonah's preaching and Nineveh's repentance</td></tr>
-      <tr><td>Advent / Fast of the Prophets</td><td>Nov 25, 2026 – Jan 7, 2027</td><td>The prophets who foretold Christ's birth</td></tr>
-      <tr><td>Wednesday &amp; Friday fasts</td><td>Every week, year-round</td><td>Christ's betrayal (Wed) and crucifixion (Fri)</td></tr>
-    </table>
-    <p class="note">Dates above are calculated from Fasika (Easter) 2026 and the Ethiopian calendar; exact observance can vary slightly by parish, so please confirm against St. Gabriel's own calendar.</p>
-  </div>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <span class="eyebrow">Columbus, Ohio</span>
+      <h1>Faith, family,<br>and the work of <em>becoming</em>.</h1>
+      <p class="lead">I'm Samra, a father, a brother, and someone who has worked hard to grow through education, faith, and service. This is where I bring it all together.</p>
+      <div class="hero-cta">
+        <a href="#story" class="btn btn-primary">Read my story</a>
+        <a href="#podcast" class="btn btn-outline">The podcast I'm building</a>
+      </div>
+    </div>
+  </header>
 
-  <h2 id="family">My Brother Yared, Fatherhood, and Faith</h2>
-  <div class="card">
-    <p>My brother Yared is everything I could hope for in a brother, and honestly, he's close to perfect in my eyes. He's been at the top of his class since we were kids, intelligent and hardworking in a way that never surprised anyone who knew him growing up. He earned his degree in electrical engineering from the University of Maryland and is now a manager at American Electric Power. Watching him become the person he is today is one of the quiet joys of my life.</p>
-    <p>I have so many reasons to thank God, and when I think about Yared and my daughter Liya, I'm reminded of just how deeply He loves me. They are two of the clearest blessings in my life.</p>
-    <p>Becoming Liya's father changed the way I see everything. She's 8 now, and being her dad has given me a different sense of purpose than anything else I've done. God comes first in my life, and I believe it's my responsibility to help instill that same faith in her as she grows. I don't take that lightly, it's one of the things I care most about getting right.</p>
-  </div>
+  <section id="story">
+    <div class="wrap section-head reveal">
+      <span class="section-num">01</span>
+      <h2>Welcome, this is my story</h2>
+    </div>
+    <div class="wrap">
+      <div class="card reveal">
+        <p>My name is Samra Ayele. I'm Ethiopian Orthodox Christian, a father, a brother, and someone who has worked hard to grow through education and service. This page is where I bring the different parts of my life together: my faith, my family, the work I do, and the podcast I'm building. My daughter Liya, my church community, and my relationship with my brother Yared matter to me as much as anything I've accomplished professionally, and I wanted a place that reflects that.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="podcast">My Podcast</h2>
-  <div class="card">
-    <p>I'm in the early stages of building a podcast, and I want it to reflect the different parts of my life rather than just one. The plan is to move between a few themes I actually live: cybersecurity made understandable for everyday people, the operational excellence and Lean Six Sigma thinking I've built my career on, my Ethiopian Orthodox faith and heritage, and the experience of raising my daughter Liya. It's a mix because that's genuinely how my life looks, not because I couldn't pick one lane.</p>
-    <div class="placeholder">Coming soon: podcast name, format, episode length, and launch timing. For now, consider this "a podcast is in the works."</div>
-  </div>
+  <section id="faith" class="tint">
+    <div class="wrap section-head reveal">
+      <span class="section-num">02</span>
+      <h2>Faith and church</h2>
+      <p>God is second to none in my life. My faith shapes how I try to live, every day.</p>
+    </div>
+    <div class="wrap">
+      <div class="card reveal">
+        <p>My faith is Ethiopian Orthodox Christianity, and it shapes how I try to live. I volunteer with St. Gabriel Church in Columbus.</p>
+        <div class="pull">"Fasting isn't just tradition in our Church, it's a spiritual discipline tied to specific moments in our faith."</div>
+        <h3>The seven fasts of the Ethiopian Orthodox Tewahedo Church</h3>
+        <table>
+          <tr><th>Fast</th><th>2026 dates</th><th>What it commemorates</th></tr>
+          <tr><td>Great Lent (Abiy Tsom)</td><td>Feb 16 – Apr 11</td><td>55 days of preparation before Fasika (Easter), including Holy Week</td></tr>
+          <tr><td>Fast of the Apostles</td><td>~Jun 1 – Jul 12</td><td>The apostles fasting and praying before preaching the Gospel</td></tr>
+          <tr><td>Fast of the Assumption (Filseta)</td><td>Aug 7 – 21/22</td><td>Honoring the Virgin Mary and her assumption</td></tr>
+          <tr><td>Fast of Nineveh (Tsome Nenewe)</td><td>A few weeks before Lent</td><td>The prophet Jonah's preaching and Nineveh's repentance</td></tr>
+          <tr><td>Advent / Fast of the Prophets</td><td>Nov 25, 2026 – Jan 7, 2027</td><td>The prophets who foretold Christ's birth</td></tr>
+          <tr><td>Wednesday &amp; Friday fasts</td><td>Every week, year-round</td><td>Christ's betrayal (Wed) and crucifixion (Fri)</td></tr>
+        </table>
+        <p class="note">Dates above are calculated from Fasika (Easter) 2026 and the Ethiopian calendar; exact observance can vary slightly by parish, so please confirm against St. Gabriel's own calendar.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="work">Work and Accomplishments</h2>
-  <div class="card">
-    <p>My professional path includes operational excellence work at Honeywell and PIP Global Safety, and my education: a B.S. in Cybersecurity from Franklin University, completed in January 2026 with summa cum laude honors and a 3.94 GPA, and an Associate Degree in Natural Science from Columbus State Community College.</p>
-    <p>At Honeywell, I helped improve a picking process, raising the reported rate from 7 to 11 lines per hour, with estimated savings of about $440,000.</p>
-    <div class="placeholder">Coming soon: details on the business-continuity shipping-label process and the Bravo Award, once confirmed.</div>
-  </div>
+  <section id="family">
+    <div class="wrap section-head reveal">
+      <span class="section-num">03</span>
+      <h2>My brother Yared, fatherhood, and faith</h2>
+    </div>
+    <div class="wrap">
+      <div class="card reveal">
+        <p>My brother Yared is everything I could hope for in a brother, and honestly, he's close to perfect in my eyes. He's been at the top of his class since we were kids, intelligent and hardworking in a way that never surprised anyone who knew him growing up. He earned his degree in electrical engineering from the University of Maryland and is now a manager at American Electric Power. Watching him become the person he is today is one of the quiet joys of my life.</p>
+        <div class="pull">When I think about Yared and my daughter Liya, I'm reminded of just how deeply God loves me.</div>
+        <p>I have so many reasons to thank God, and they are two of the clearest blessings in my life. Becoming Liya's father changed the way I see everything. She's 8 now, and being her dad has given me a different sense of purpose than anything else I've done. God comes first in my life, and I believe it's my responsibility to help instill that same faith in her as she grows. I don't take that lightly, it's one of the things I care most about getting right.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="interests">Interests and What I'm Building</h2>
-  <div class="card">
-    <ul class="plain">
-      <li>Photography</li>
-      <li>Lifelong learning</li>
-      <li>Cybersecurity</li>
-      <li>Developing the podcast</li>
-    </ul>
-  </div>
+  <section id="podcast" class="tint">
+    <div class="wrap section-head reveal">
+      <span class="section-num">04</span>
+      <h2>The podcast I'm building</h2>
+    </div>
+    <div class="wrap">
+      <div class="card reveal">
+        <p>I'm in the early stages of building a podcast, and I want it to reflect the different parts of my life rather than just one. The plan is to move between a few themes I actually live:</p>
+        <div class="pill-row">
+          <span class="pill">Cybersecurity, made understandable</span>
+          <span class="pill">Operational excellence &amp; Lean Six Sigma</span>
+          <span class="pill">Ethiopian Orthodox faith &amp; heritage</span>
+          <span class="pill">Raising Liya</span>
+        </div>
+        <p style="margin-top:22px;">It's a mix because that's genuinely how my life looks, not because I couldn't pick one lane.</p>
+        <div class="placeholder">Coming soon: podcast name, format, episode length, and launch timing.</div>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="contact">Photos, Contact, and Social Links</h2>
-  <div class="placeholder">Coming soon: photos, preferred contact method, and any social links you'd like public.</div>
+  <section id="work">
+    <div class="wrap section-head reveal">
+      <span class="section-num">05</span>
+      <h2>Work and accomplishments</h2>
+      <p>One part of my story, not the whole of it.</p>
+    </div>
+    <div class="wrap">
+      <div class="card reveal">
+        <p>My professional path includes operational excellence work at Honeywell and PIP Global Safety, and my education: a B.S. in Cybersecurity from Franklin University, completed in January 2026 with summa cum laude honors and a 3.94 GPA, and an Associate Degree in Natural Science from Columbus State Community College.</p>
+        <div class="stat-grid">
+          <div class="stat"><div class="num">3.94</div><div class="label">GPA, Summa Cum Laude</div></div>
+          <div class="stat"><div class="num">7&rarr;11</div><div class="label">Lines/hour improved</div></div>
+          <div class="stat"><div class="num">$440K</div><div class="label">Estimated savings</div></div>
+        </div>
+        <p style="margin-top:24px;">At Honeywell, I helped improve a picking process, raising the reported rate from 7 to 11 lines per hour, with estimated savings of about $440,000.</p>
+        <div class="placeholder">Coming soon: details on the business-continuity shipping-label process and the Bravo Award, once confirmed.</div>
+      </div>
+    </div>
+  </section>
 
-  <hr>
-  <footer>Thanks for stopping by. — Samra</footer>
-</div>
+  <section id="interests" class="tint">
+    <div class="wrap section-head reveal">
+      <span class="section-num">06</span>
+      <h2>Interests &amp; what I'm building</h2>
+    </div>
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="pill-row">
+          <span class="pill">Photography</span>
+          <span class="pill">Lifelong learning</span>
+          <span class="pill">Cybersecurity</span>
+          <span class="pill">Developing the podcast</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap section-head reveal">
+      <span class="section-num">07</span>
+      <h2>Photos, contact &amp; social</h2>
+    </div>
+    <div class="wrap">
+      <div class="placeholder reveal">Coming soon: photos, preferred contact method, and any social links you'd like public.</div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Samra Ayele</strong> &middot; Columbus, Ohio<br>
+    Thanks for stopping by.
+  </footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
