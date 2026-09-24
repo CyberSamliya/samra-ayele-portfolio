@@ -1,295 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samra Ayele</title>
-<meta name="description" content="Samra Ayele — faith, family, career, and the podcast I'm building.">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1F3A'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23E7B24A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
-<style>
-  :root{
-    --navy:#0B1F3A; --navy2:#122A4E; --gold:#E7B24A; --emerald:#0F6B4F;
-    --terracotta:#C1502E; --bg:#FBF8F3; --card:#FFFFFF; --text:#1C2230; --text2:#5A6274;
-    --border:#E8E2D6; --maxw:900px;
-    font-size:16px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font-family:'Inter',-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.75;
-  }
-  h1,h2,h3{font-family:'Fraunces',Georgia,serif; color:var(--navy); letter-spacing:-.01em;}
-  a{color:var(--emerald);}
-  ::selection{background:var(--gold); color:var(--navy);}
-
-  /* NAV */
-  .nav{
-    position:sticky; top:0; z-index:50; background:rgba(251,248,243,.88); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
-  .nav-brand{font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:1.15rem; color:var(--navy); text-decoration:none;}
-  .nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0; flex-wrap:wrap;}
-  .nav-links a{color:var(--text2); text-decoration:none; font-size:.88rem; font-weight:600; letter-spacing:.02em; padding-bottom:4px; border-bottom:2px solid transparent; transition:color .2s, border-color .2s;}
-  .nav-links a:hover{color:var(--navy); border-color:var(--gold);}
-
-  /* HERO */
-  .hero{
-    position:relative; overflow:hidden;
-    background:radial-gradient(1200px 500px at 15% -10%, #16335c 0%, var(--navy) 55%, #081527 100%);
-    color:#fff; padding:100px 24px 120px;
-  }
-  .hero::after{
-    content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
-    background:linear-gradient(90deg,var(--emerald) 0 33%, var(--gold) 33% 66%, var(--terracotta) 66% 100%);
-  }
-  .hero-inner{max-width:var(--maxw); margin:0 auto; position:relative;}
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:.16em;
-    font-size:.72rem; font-weight:700; color:var(--gold); margin-bottom:22px;
-  }
-  .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold);}
-  .hero h1{
-    color:#fff; font-size:clamp(2.6rem, 6vw, 4.4rem); font-weight:900; line-height:1.02; margin:0 0 .3em; letter-spacing:-.02em;
-  }
-  .hero h1 em{color:var(--gold); font-style:normal;}
-  .hero p.lead{
-    max-width:560px; color:#C9D2E3; font-size:1.15rem; margin:0 0 34px; font-weight:400;
-  }
-  .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:100px;
-    font-weight:700; font-size:.92rem; text-decoration:none; transition:transform .15s, box-shadow .15s;
-  }
-  .btn-primary{background:var(--gold); color:var(--navy);}
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(231,178,74,.35);}
-  .btn-outline{border:1.5px solid rgba(255,255,255,.35); color:#fff;}
-  .btn-outline:hover{border-color:#fff; transform:translateY(-2px);}
-
-  /* CONTENT */
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
-  section{padding:84px 0;}
-  section.tint{background:#F4EEE1;}
-  .section-head{margin-bottom:36px; max-width:640px;}
-  .section-num{
-    font-family:'Fraunces',Georgia,serif; font-size:.85rem; font-weight:700; color:var(--gold);
-    -webkit-text-stroke:1px var(--navy); text-stroke:1px var(--navy);
-  }
-  .section-head h2{font-size:clamp(1.8rem,3.5vw,2.4rem); margin:.2em 0 .35em; font-weight:700;}
-  .section-head p{color:var(--text2); font-size:1.05rem; margin:0;}
-
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  .card{
-    background:var(--card); border:1px solid var(--border); border-radius:18px;
-    padding:32px 34px; margin-bottom:20px; box-shadow:0 1px 2px rgba(20,20,20,.03);
-    transition:box-shadow .2s, transform .2s;
-  }
-  .card:hover{box-shadow:0 16px 32px rgba(20,20,20,.06); transform:translateY(-2px);}
-  .card p{margin:0 0 1.05em; font-size:1.03rem;}
-  .card p:last-child{margin-bottom:0;}
-  .card h3{font-size:1.1rem; margin:1.1em 0 .3em; font-weight:600;}
-
-  .pull{
-    border-left:3px solid var(--gold); padding-left:20px; margin:24px 0; font-family:'Fraunces',Georgia,serif;
-    font-size:1.25rem; font-weight:500; color:var(--navy); font-style:italic; line-height:1.5;
-  }
-
-  .stat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:18px; margin:28px 0 8px;}
-  .stat{background:var(--navy); color:#fff; border-radius:16px; padding:22px 20px;}
-  .stat .num{font-family:'Fraunces',Georgia,serif; font-size:1.9rem; font-weight:800; color:var(--gold);}
-  .stat .label{font-size:.82rem; color:#C9D2E3; margin-top:4px;}
-
-  table{width:100%; border-collapse:collapse; margin:1.4em 0 .5em; font-size:.94rem;}
-  th,td{text-align:left; padding:12px 14px; border-bottom:1px solid var(--border);}
-  th{color:var(--text2); font-weight:700; text-transform:uppercase; font-size:.7rem; letter-spacing:.06em;}
-  tr:hover td{background:#FAF6EC;}
-  .note{font-size:.88rem; color:var(--text2); margin-top:1em; font-style:italic;}
-
-  .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0;}
-  .pill{background:#fff; border:1px solid var(--border); border-radius:100px; padding:9px 18px; font-size:.9rem; font-weight:600; color:var(--navy);}
-
-  .placeholder{
-    border:1.5px dashed #C9BFA4; border-radius:16px; padding:22px 26px;
-    color:var(--text2); font-style:italic; background:#FAF6EC;
-  }
-  .placeholder::before{content:"✏️ "; font-style:normal;}
-
-  footer{
-    background:var(--navy); color:#C9D2E3; padding:48px 24px; text-align:center; font-size:.92rem;
-  }
-  footer strong{color:#fff;}
-
-  @media (max-width:640px){
-    .nav-links{display:none;}
-    .hero{padding:72px 20px 88px;}
-    section{padding:56px 0;}
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="A personal page about Samra Ayele: faith, family, fatherhood, work, and the stories still unfolding.">
+  <title>Samra Ayele | Faith, Family &amp; Becoming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202a28;
+      --muted: #5d6963;
+      --paper: #f7f4ed;
+      --white: #fffefa;
+      --green: #234b3c;
+      --green-deep: #17372c;
+      --sage: #dce7dc;
+      --gold: #c29347;
+      --line: #e6e0d4;
+      --rose: #f2e6dc;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", system-ui, sans-serif;
+      --width: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.7; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 20; padding: 10px 14px; background: white; }
+    .skip:focus { left: 8px; }
+    .shell { width: min(var(--width), calc(100% - 48px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgb(247 244 237 / 94%); border-bottom: 1px solid rgb(35 75 60 / 10%); backdrop-filter: blur(12px); }
+    .nav { min-height: 72px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .brand { text-decoration: none; font-family: var(--serif); font-weight: 700; font-size: 1.2rem; color: var(--green-deep); white-space: nowrap; }
+    .navlinks { display: flex; gap: 24px; align-items: center; padding: 0; margin: 0; list-style: none; }
+    .navlinks a { text-decoration: none; color: var(--muted); font-size: .9rem; font-weight: 600; }
+    .navlinks a:hover { color: var(--green); }
+    .menu-button { display: none; border: 1px solid var(--line); background: var(--white); color: var(--green-deep); border-radius: 999px; padding: 9px 14px; font: 600 .9rem var(--sans); }
+    .hero { position: relative; overflow: hidden; color: white; background: var(--green-deep); }
+    .hero:before, .hero:after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+    .hero:before { width: 560px; height: 560px; right: -160px; top: -240px; border: 1px solid rgb(255 255 255 / 12%); box-shadow: 0 0 0 42px rgb(255 255 255 / 3%), 0 0 0 95px rgb(255 255 255 / 2%); }
+    .hero:after { width: 420px; height: 420px; left: -230px; bottom: -310px; background: rgb(194 147 71 / 13%); }
+    .hero-inner { min-height: 560px; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 56px; padding-block: 76px; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #e4c58f; letter-spacing: .15em; font-size: .75rem; font-weight: 700; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.16; }
+    h1 { max-width: 730px; margin: 20px 0; font-size: clamp(3rem, 6.5vw, 5.8rem); letter-spacing: -.045em; }
+    h1 em { color: #e4c58f; font-weight: 500; }
+    .hero-copy { color: #d6e1d9; max-width: 590px; font-size: 1.08rem; margin-bottom: 30px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; padding: 11px 20px; text-decoration: none; font-weight: 700; transition: transform .18s, background .18s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-gold { color: #24392f; background: #e4c58f; }
+    .button-ghost { border: 1px solid rgb(255 255 255 / 35%); color: white; }
+    .hero-note { align-self: end; justify-self: end; max-width: 280px; border-left: 1px solid #c29347; padding: 12px 0 12px 20px; color: #e4e9e4; font: italic 1.2rem/1.5 var(--serif); }
+    .hero-note span { display: block; color: #e4c58f; margin-top: 10px; font: 700 .72rem var(--sans); letter-spacing: .11em; text-transform: uppercase; }
+    .intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 72px; padding-block: 104px; align-items: start; }
+    .section-kicker { color: #8a6837; text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 700; }
+    .intro h2, .section-title { font-size: clamp(2rem, 4vw, 3.2rem); margin: 12px 0 0; letter-spacing: -.025em; }
+    .intro-copy { color: var(--muted); font-size: 1.12rem; max-width: 670px; }
+    .intro-copy p:last-child { margin-bottom: 0; }
+    .section { padding-block: 92px; }
+    .section.soft { background: #eeece3; }
+    .section.green { background: var(--green); color: white; }
+    .section.green .section-title { color: white; }
+    .section.green .section-kicker { color: #e4c58f; }
+    .section-head { max-width: 660px; margin-bottom: 42px; }
+    .section-head .section-title { margin-bottom: 12px; }
+    .section-head p { color: var(--muted); margin-bottom: 0; }
+    .section.green .section-head p { color: #d4e0d8; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .story-card { padding: 32px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; }
+    .story-card h3 { font-size: 1.55rem; margin-bottom: 12px; color: var(--green-deep); }
+    .story-card p { color: var(--muted); margin-bottom: 0; }
+    .story-card .overline { color: #92703d; text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; font-weight: 700; margin-bottom: 14px; }
+    .family-quote { margin: 30px 0 0; border-radius: 18px; padding: 30px 34px; color: var(--green-deep); background: var(--sage); font: 500 clamp(1.35rem, 2.4vw, 2rem)/1.45 var(--serif); }
+    .family-quote cite { display: block; margin-top: 14px; color: #526b5c; font: 700 .72rem var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+    .faith-layout { display: grid; grid-template-columns: 1fr .8fr; gap: 60px; align-items: center; }
+    .faith-copy { font-size: 1.08rem; color: #e0e9e2; max-width: 640px; }
+    .faith-emphasis { border: 1px solid rgb(255 255 255 / 18%); background: rgb(255 255 255 / 6%); border-radius: 20px; padding: 30px; color: #f2e5cb; font: 500 1.5rem/1.45 var(--serif); }
+    .faith-emphasis small { display: block; margin-top: 15px; color: #d5e0d8; font: 500 .84rem/1.6 var(--sans); }
+    .podcast-panel { background: var(--white); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; display: grid; grid-template-columns: 1fr .72fr; }
+    .podcast-main { padding: 42px; }
+    .podcast-main h3 { color: var(--green-deep); font-size: 2rem; margin: 10px 0 14px; }
+    .podcast-main p { max-width: 620px; color: var(--muted); }
+    .podcast-side { padding: 42px; display: flex; flex-direction: column; justify-content: center; background: var(--rose); color: #68452f; }
+    .podcast-side strong { font: 600 1.3rem var(--serif); }
+    .podcast-side p { margin: 10px 0 0; color: #775942; font-size: .95rem; }
+    .work-intro { color: #d4e0d8; max-width: 700px; font-size: 1.05rem; }
+    .achievement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+    .achievement { padding: 26px; background: #fffefa; color: var(--ink); border-radius: 18px; min-height: 180px; }
+    .achievement .number { color: var(--green); font: 600 clamp(2rem, 4vw, 3rem)/1 var(--serif); letter-spacing: -.04em; }
+    .achievement h3 { margin: 18px 0 8px; font: 700 .92rem var(--sans); }
+    .achievement p { color: var(--muted); font-size: .9rem; margin: 0; line-height: 1.55; }
+    .timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .milestone { border-top: 1px solid rgb(255 255 255 / 24%); padding: 20px 4px; color: #e2e9e3; }
+    .milestone strong { display: block; color: #e4c58f; margin-bottom: 4px; }
+    .closing { padding-block: 94px; text-align: center; }
+    .closing h2 { max-width: 720px; margin: 12px auto 18px; font-size: clamp(2.2rem, 4vw, 3.5rem); }
+    .closing p { color: var(--muted); max-width: 580px; margin: 0 auto 26px; }
+    footer { background: #142d24; color: #d4e0d8; padding: 30px 0; font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    footer strong { color: white; font-family: var(--serif); font-size: 1.1rem; }
+    .top-link { text-decoration: none; color: #e4c58f; }
+    @media (max-width: 760px) {
+      .shell { width: min(var(--width), calc(100% - 36px)); }
+      .menu-button { display: inline-flex; }
+      .nav { min-height: 66px; }
+      .navlinks { display: none; position: absolute; top: 65px; left: 0; right: 0; padding: 16px 20px 22px; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+      .navlinks.open { display: flex; }
+      .navlinks a { display: block; padding: 11px 0; }
+      .hero-inner { min-height: 0; grid-template-columns: 1fr; gap: 30px; padding-block: 72px 56px; }
+      .hero-note { justify-self: start; }
+      .intro { grid-template-columns: 1fr; gap: 24px; padding-block: 72px; }
+      .section { padding-block: 70px; }
+      .two-col, .faith-layout, .podcast-panel { grid-template-columns: 1fr; }
+      .faith-layout { gap: 28px; }
+      .achievement-grid { grid-template-columns: 1fr; }
+      .achievement { min-height: auto; }
+      .podcast-side { padding: 30px; }
+      .podcast-main { padding: 30px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 3rem; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .story-card { padding: 25px; }
+      .family-quote { padding: 24px; }
+      .timeline { grid-template-columns: 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-
-  <div class="nav">
-    <div class="nav-inner">
-      <a class="nav-brand" href="#top">Samra Ayele</a>
-      <ul class="nav-links">
-        <li><a href="#story">Story</a></li>
-        <li><a href="#faith">Faith</a></li>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top">Samra Ayele</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navlinks">Menu</button>
+      <ul class="navlinks" id="navlinks">
+        <li><a href="#story">My story</a></li>
         <li><a href="#family">Family</a></li>
+        <li><a href="#faith">Faith</a></li>
         <li><a href="#podcast">Podcast</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#work">Accomplishments</a></li>
       </ul>
-    </div>
-  </div>
-
-  <header class="hero" id="top">
-    <div class="hero-inner">
-      <span class="eyebrow">Columbus, Ohio</span>
-      <h1>Faith, family,<br>and the work of <em>becoming</em>.</h1>
-      <p class="lead">I'm Samra, a father, a brother, and someone who has worked hard to grow through education, faith, and service. This is where I bring it all together.</p>
-      <div class="hero-cta">
-        <a href="#story" class="btn btn-primary">Read my story</a>
-        <a href="#podcast" class="btn btn-outline">The podcast I'm building</a>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <section id="story">
-    <div class="wrap section-head reveal">
-      <span class="section-num">01</span>
-      <h2>Welcome, this is my story</h2>
-    </div>
-    <div class="wrap">
-      <div class="card reveal">
-        <p>My name is Samra Ayele. I'm Ethiopian Orthodox Christian, a father, a brother, and someone who has worked hard to grow through education and service. This page is where I bring the different parts of my life together: my faith, my family, the work I do, and the podcast I'm building. My daughter Liya, my church community, and my relationship with my brother Yared matter to me as much as anything I've accomplished professionally, and I wanted a place that reflects that.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="faith" class="tint">
-    <div class="wrap section-head reveal">
-      <span class="section-num">02</span>
-      <h2>Faith and church</h2>
-      <p>God is second to none in my life. My faith shapes how I try to live, every day.</p>
-    </div>
-    <div class="wrap">
-      <div class="card reveal">
-        <p>My faith is Ethiopian Orthodox Christianity, and it shapes how I try to live. I volunteer with St. Gabriel Church in Columbus.</p>
-        <div class="pull">"Fasting isn't just tradition in our Church, it's a spiritual discipline tied to specific moments in our faith."</div>
-        <h3>The seven fasts of the Ethiopian Orthodox Tewahedo Church</h3>
-        <table>
-          <tr><th>Fast</th><th>2026 dates</th><th>What it commemorates</th></tr>
-          <tr><td>Great Lent (Abiy Tsom)</td><td>Feb 16 – Apr 11</td><td>55 days of preparation before Fasika (Easter), including Holy Week</td></tr>
-          <tr><td>Fast of the Apostles</td><td>~Jun 1 – Jul 12</td><td>The apostles fasting and praying before preaching the Gospel</td></tr>
-          <tr><td>Fast of the Assumption (Filseta)</td><td>Aug 7 – 21/22</td><td>Honoring the Virgin Mary and her assumption</td></tr>
-          <tr><td>Fast of Nineveh (Tsome Nenewe)</td><td>A few weeks before Lent</td><td>The prophet Jonah's preaching and Nineveh's repentance</td></tr>
-          <tr><td>Advent / Fast of the Prophets</td><td>Nov 25, 2026 – Jan 7, 2027</td><td>The prophets who foretold Christ's birth</td></tr>
-          <tr><td>Wednesday &amp; Friday fasts</td><td>Every week, year-round</td><td>Christ's betrayal (Wed) and crucifixion (Fri)</td></tr>
-        </table>
-        <p class="note">Dates above are calculated from Fasika (Easter) 2026 and the Ethiopian calendar; exact observance can vary slightly by parish, so please confirm against St. Gabriel's own calendar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="family">
-    <div class="wrap section-head reveal">
-      <span class="section-num">03</span>
-      <h2>My brother Yared, fatherhood, and faith</h2>
-    </div>
-    <div class="wrap">
-      <div class="card reveal">
-        <p>My brother Yared is everything I could hope for in a brother, and honestly, he's close to perfect in my eyes. He's been at the top of his class since we were kids, intelligent and hardworking in a way that never surprised anyone who knew him growing up. He earned his degree in electrical engineering from the University of Maryland and is now a manager at American Electric Power. Watching him become the person he is today is one of the quiet joys of my life.</p>
-        <div class="pull">When I think about Yared and my daughter Liya, I'm reminded of just how deeply God loves me.</div>
-        <p>I have so many reasons to thank God, and they are two of the clearest blessings in my life. Becoming Liya's father changed the way I see everything. She's 8 now, and being her dad has given me a different sense of purpose than anything else I've done. God comes first in my life, and I believe it's my responsibility to help instill that same faith in her as she grows. I don't take that lightly, it's one of the things I care most about getting right.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="podcast" class="tint">
-    <div class="wrap section-head reveal">
-      <span class="section-num">04</span>
-      <h2>The podcast I'm building</h2>
-    </div>
-    <div class="wrap">
-      <div class="card reveal">
-        <p>I'm in the early stages of building a podcast, and I want it to reflect the different parts of my life rather than just one. The plan is to move between a few themes I actually live:</p>
-        <div class="pill-row">
-          <span class="pill">Cybersecurity, made understandable</span>
-          <span class="pill">Operational excellence &amp; Lean Six Sigma</span>
-          <span class="pill">Ethiopian Orthodox faith &amp; heritage</span>
-          <span class="pill">Raising Liya</span>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner shell">
+        <div>
+          <span class="eyebrow">A life shaped by faith, family &amp; purpose</span>
+          <h1 id="hero-title">My greatest blessings are <em>the people I love.</em></h1>
+          <p class="hero-copy">I’m Samra Ayele. I’m a father, a brother, an Ethiopian Orthodox Christian, and a lifelong learner. This page is a little home for the people, faith, work, and hopes that make my life what it is.</p>
+          <div class="actions">
+            <a class="button button-gold" href="#story">Get to know me</a>
+            <a class="button button-ghost" href="#family">The people I thank God for</a>
+          </div>
         </div>
-        <p style="margin-top:22px;">It's a mix because that's genuinely how my life looks, not because I couldn't pick one lane.</p>
-        <div class="placeholder">Coming soon: podcast name, format, episode length, and launch timing.</div>
+        <p class="hero-note">“When I think about my daughter and my brother, I know that God loves me.”<span>What I carry with gratitude</span></p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="work">
-    <div class="wrap section-head reveal">
-      <span class="section-num">05</span>
-      <h2>Work and accomplishments</h2>
-      <p>One part of my story, not the whole of it.</p>
-    </div>
-    <div class="wrap">
-      <div class="card reveal">
-        <p>My professional path includes operational excellence work at Honeywell and PIP Global Safety, and my education: a B.S. in Cybersecurity from Franklin University, completed in January 2026 with summa cum laude honors and a 3.94 GPA, and an Associate Degree in Natural Science from Columbus State Community College.</p>
-        <div class="stat-grid">
-          <div class="stat"><div class="num">3.94</div><div class="label">GPA, Summa Cum Laude</div></div>
-          <div class="stat"><div class="num">7&rarr;11</div><div class="label">Lines/hour improved</div></div>
-          <div class="stat"><div class="num">$440K</div><div class="label">Estimated savings</div></div>
+    <section class="intro shell" id="story" aria-labelledby="story-title">
+      <div>
+        <span class="section-kicker">A little about me</span>
+        <h2 id="story-title">A story still unfolding.</h2>
+      </div>
+      <div class="intro-copy">
+        <p>I come from Ethiopia, and the values I grew up with continue to shape the way I see family, faith, and responsibility. Today, I’m building a life in Columbus, Ohio, where I work, learn, serve my community, and raise my daughter.</p>
+        <p>My path has taken me from distribution and operational excellence to earning a degree in cybersecurity. The achievements matter to me, but they make the most sense as part of a larger story: a story of perseverance, gratitude, and the people who have walked beside me.</p>
+      </div>
+    </section>
+
+    <section class="section soft" id="family" aria-labelledby="family-title">
+      <div class="shell">
+        <div class="section-head">
+          <span class="section-kicker">The heart of my life</span>
+          <h2 class="section-title" id="family-title">Family is one of my greatest gifts.</h2>
+          <p>My daughter and my younger brother remind me every day how much I have to be thankful for.</p>
         </div>
-        <p style="margin-top:24px;">At Honeywell, I helped improve a picking process, raising the reported rate from 7 to 11 lines per hour, with estimated savings of about $440,000.</p>
-        <div class="placeholder">Coming soon: details on the business-continuity shipping-label process and the Bravo Award, once confirmed.</div>
+        <div class="two-col">
+          <article class="story-card">
+            <p class="overline">My younger brother</p>
+            <h3>Yared</h3>
+            <p>Yared is everything I could hope for in a brother, and almost perfect in my eyes. He is intelligent, thoughtful, and hardworking. Since we were kids, he has always been at the top of his class. He graduated from the University of Maryland with a degree in electrical engineering and is now a manager at American Electric Power. I’m proud of him, and deeply grateful to have him as my brother.</p>
+          </article>
+          <article class="story-card">
+            <p class="overline">Being Liya’s father</p>
+            <h3>Fatherhood changed how I see life.</h3>
+            <p>My daughter, Liya, has changed the way I look at life in general. Being her father has given me a deeper sense of purpose and gratitude. God is my priority, and I believe it is my duty to help instill that faith in my daughter as I raise her. I want my life to reflect the love, guidance, and values I hope to pass on.</p>
+          </article>
+        </div>
+        <blockquote class="family-quote">I have many reasons to thank God. When I think about Yared and Liya, I know that my God loves me.<cite>Samra</cite></blockquote>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="interests" class="tint">
-    <div class="wrap section-head reveal">
-      <span class="section-num">06</span>
-      <h2>Interests &amp; what I'm building</h2>
-    </div>
-    <div class="wrap">
-      <div class="card reveal">
-        <div class="pill-row">
-          <span class="pill">Photography</span>
-          <span class="pill">Lifelong learning</span>
-          <span class="pill">Cybersecurity</span>
-          <span class="pill">Developing the podcast</span>
+    <section class="section green" id="faith" aria-labelledby="faith-title">
+      <div class="shell">
+        <div class="faith-layout">
+          <div>
+            <span class="section-kicker">What grounds me</span>
+            <h2 class="section-title" id="faith-title">My faith comes first.</h2>
+            <p class="faith-copy">I am an Ethiopian Orthodox Christian, and my relationship with God is the foundation I return to. My faith guides the way I try to live, the way I care for my family, and the values I hope to pass on to Liya. Serving and volunteering with my church community is one way I put that care into practice.</p>
+            <p class="faith-copy">I’m grateful for the community and fellowship I have found at St. Gabriel Church in Columbus.</p>
+          </div>
+          <aside class="faith-emphasis">Gratitude changes how I see the life I have been given.<small>Faith, family, and service are not separate parts of my story. They belong together.</small></aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="wrap section-head reveal">
-      <span class="section-num">07</span>
-      <h2>Photos, contact &amp; social</h2>
-    </div>
-    <div class="wrap">
-      <div class="placeholder reveal">Coming soon: photos, preferred contact method, and any social links you'd like public.</div>
-    </div>
-  </section>
+    <section class="section" id="podcast" aria-labelledby="podcast-title">
+      <div class="shell">
+        <div class="section-head">
+          <span class="section-kicker">A new chapter</span>
+          <h2 class="section-title" id="podcast-title">A podcast is taking shape.</h2>
+          <p>I’m exploring the idea of creating a podcast and finding the right way to share stories and conversations that matter to me.</p>
+        </div>
+        <div class="podcast-panel">
+          <div class="podcast-main">
+            <p class="section-kicker">In the making</p>
+            <h3>There’s more to come.</h3>
+            <p>The name, format, and first topics are still taking shape. When I’m ready, I’ll share the details here. For now, this is a place to follow along as the idea grows.</p>
+          </div>
+          <aside class="podcast-side"><strong>Good conversations begin with listening.</strong><p>Podcast details and future updates will be added when they are ready.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-head">
+          <span class="section-kicker">Work I’m proud of</span>
+          <h2 class="section-title" id="work-title">Learning, improving, and making a difference.</h2>
+          <p class="work-intro">My professional accomplishments are an important part of my journey. I bring years of operational experience, a commitment to continuous improvement, and a cybersecurity education I worked hard to earn.</p>
+        </div>
+        <div class="achievement-grid">
+          <article class="achievement"><div class="number">3.94</div><h3>Summa Cum Laude</h3><p>B.S. in Cybersecurity, Franklin University, completed January 2026.</p></article>
+          <article class="achievement"><div class="number">7 → 11</div><h3>Lines picked per hour</h3><p>Helped improve a Honeywell picking process; estimated savings were approximately $440,000.</p></article>
+          <article class="achievement"><div class="number">Bravo</div><h3>Business continuity recognition</h3><p>Recognized for a shipping-label process designed to support continuity during a system disruption.</p></article>
+        </div>
+        <div class="timeline">
+          <div class="milestone"><strong>Education</strong>Associate Degree in Natural Science, Columbus State Community College.</div>
+          <div class="milestone"><strong>Professional journey</strong>Operational excellence experience at Honeywell and PIP Global Safety.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing shell" aria-labelledby="closing-title">
+      <span class="section-kicker">Thank you for being here</span>
+      <h2 id="closing-title">The best parts of life are the ones we share.</h2>
+      <p>This page is a work in progress, just like all of us. I’m grateful you took a moment to learn a little about my story.</p>
+      <a class="button button-gold" style="background:var(--green);color:white" href="#top">Back to the beginning</a>
+    </section>
+  </main>
 
   <footer>
-    <strong>Samra Ayele</strong> &middot; Columbus, Ohio<br>
-    Thanks for stopping by.
+    <div class="shell footer-inner"><div><strong>Samra Ayele</strong><br>Faith · Family · Purpose</div><a class="top-link" href="#top">Back to top ↑</a></div>
   </footer>
-
-<script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.navlinks');
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!open));
+      navLinks.classList.toggle('open', !open);
+    });
+    navLinks.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
 </body>
 </html>
