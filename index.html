@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samra — Hi, I'm Samra</title>
-<meta name="description" content="A little about Samra — her story, her family, and what she's up to these days.">
+<title>Samra Ayele</title>
+<meta name="description" content="Samra Ayele — faith, family, career, and the podcast I'm building.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314213D'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='700' fill='%232A9D8F' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --navy:#14213D; --slate:#1A2B4C; --teal:#2A9D8F; --amber:#C97A2B;
+    --green:#078930; --yellow:#FCDD09; --red:#DA121A;
     --bg:#F7F8FA; --card:#FFFFFF; --text:#1F2430; --text2:#5B6472; --border:#E2E5EA;
-    --radius:14px; --maxw:760px;
+    --radius:14px; --maxw:780px;
     font-size:16px;
   }
   *{box-sizing:border-box;}
@@ -21,7 +22,8 @@
     font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.7;
   }
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:64px 24px 96px;}
+  .flag-bar{height:6px; background:linear-gradient(90deg,var(--green) 0 33%,var(--yellow) 33% 66%,var(--red) 66% 100%);}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:56px 24px 96px;}
   .avatar{
     width:88px; height:88px; border-radius:50%; background:linear-gradient(135deg,var(--teal),var(--navy));
     display:flex; align-items:center; justify-content:center; color:#fff; font-size:2rem; font-weight:800;
@@ -29,44 +31,103 @@
   }
   h1{font-size:2.4rem; font-weight:800; letter-spacing:-.02em; color:var(--slate); margin:0 0 .2em;}
   .tagline{color:var(--text2); font-size:1.15rem; margin:0 0 2.5em;}
-  h2{font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--teal); margin:2.2em 0 .6em;}
+  nav.toc{display:flex; flex-wrap:wrap; gap:10px 18px; margin-bottom:3em; padding:0; list-style:none;}
+  nav.toc a{color:var(--teal); text-decoration:none; font-weight:600; font-size:.92rem;}
+  nav.toc a:hover{text-decoration:underline;}
+  h2{font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--teal); margin:2.4em 0 .6em; scroll-margin-top:20px;}
+  h3{font-size:1.05rem; font-weight:700; color:var(--slate); margin:1.2em 0 .3em;}
   p{margin:0 0 1.1em; font-size:1.05rem;}
   .card{
     background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
-    padding:22px 26px; margin-bottom:1.1em;
+    padding:24px 28px; margin-bottom:1.1em;
   }
   .placeholder{
     border:1.5px dashed var(--border); border-radius:var(--radius); padding:20px 26px;
     color:var(--text2); font-style:italic; background:transparent;
   }
   .placeholder::before{ content:"✏️ "; font-style:normal; }
+  table{width:100%; border-collapse:collapse; margin:1em 0 0.5em; font-size:.95rem;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--border);}
+  th{color:var(--text2); font-weight:700; text-transform:uppercase; font-size:.72rem; letter-spacing:.05em;}
+  .note{font-size:.9rem; color:var(--text2); margin-top:.8em;}
+  ul.plain{margin:0 0 1.1em; padding-left:1.2em;}
+  ul.plain li{margin-bottom:.4em; font-size:1.05rem;}
   hr{border:none; border-top:1px solid var(--border); margin:2.5em 0;}
   footer{margin-top:3em; color:var(--text2); font-size:.9rem;}
 </style>
 </head>
 <body>
+<div class="flag-bar"></div>
 <div class="wrap">
 
   <div class="avatar">S</div>
   <h1>Hi, I'm Samra.</h1>
-  <p class="tagline">I live in Columbus, Ohio, and I'm in the middle of a career move I'm genuinely excited about: after years in operations and process improvement, I'm now building a career in cybersecurity.</p>
+  <p class="tagline">Faith, family, and the work I'm building, all in one place.</p>
 
-  <h2>A bit of my story</h2>
+  <ul class="toc">
+    <li><a href="#story">My Story</a></li>
+    <li><a href="#faith">Faith and Church</a></li>
+    <li><a href="#family">Family</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <h2 id="story">Welcome / My Story</h2>
   <div class="card">
-    <p>For the past several years I've worked as an Operational Excellence Specialist, leading process improvement projects, standardizing procedures, and training teams to work more efficiently. It's work I've been good at and proud of. But a couple years back I got curious about cybersecurity — the problem-solving side of it, the constant learning, the feeling that you're actually protecting something that matters — and that curiosity turned into a real plan.</p>
-    <p>I went back to school and earned my degree in Cybersecurity from Franklin University, graduating Summa Cum Laude. These days I split my time between my day job, studying, and building hands-on projects — I'm currently setting up a home lab to practice the kind of work a security analyst actually does day to day.</p>
+    <p>My name is Samra Ayele. I'm Ethiopian Orthodox Christian, a father, a brother, and someone who has worked hard to grow through education and service. This page is where I bring the different parts of my life together: my faith, my family, the work I do, and the podcast I'm building. My daughter Liya, my church community, and my relationship with my brother Yared matter to me as much as anything I've accomplished professionally, and I wanted a place that reflects that.</p>
   </div>
 
-  <h2>Family</h2>
+  <h2 id="faith">Faith and Church</h2>
   <div class="card">
-    <p>I'm a mom to my daughter Liya, who's 8 and keeps me on my toes in the best way. A lot of what drives me right now — going back to school, building a new career — is wanting to show her that it's never too late to go after something new.</p>
+    <p>My faith is Ethiopian Orthodox Christianity, and it shapes how I try to live. I volunteer with St. Gabriel Church in Columbus.</p>
+    <h3>The Fasts of the Ethiopian Orthodox Tewahedo Church</h3>
+    <p>Fasting isn't just tradition in our Church, it's a spiritual discipline tied to specific moments in our faith. There are seven major fasting periods each year:</p>
+    <table>
+      <tr><th>Fast</th><th>2026 dates</th><th>What it commemorates</th></tr>
+      <tr><td>Great Lent (Abiy Tsom)</td><td>Feb 16 – Apr 11</td><td>55 days of preparation before Fasika (Easter), including Holy Week</td></tr>
+      <tr><td>Fast of the Apostles</td><td>~Jun 1 – Jul 12</td><td>The apostles fasting and praying before setting out to preach the Gospel</td></tr>
+      <tr><td>Fast of the Assumption (Filseta)</td><td>Aug 7 – 21/22</td><td>Honoring the Virgin Mary and her assumption</td></tr>
+      <tr><td>Fast of Nineveh (Tsome Nenewe)</td><td>A few weeks before Lent</td><td>The prophet Jonah's preaching and Nineveh's repentance</td></tr>
+      <tr><td>Advent / Fast of the Prophets</td><td>Nov 25, 2026 – Jan 7, 2027</td><td>The prophets who foretold Christ's birth</td></tr>
+      <tr><td>Wednesday &amp; Friday fasts</td><td>Every week, year-round</td><td>Christ's betrayal (Wed) and crucifixion (Fri)</td></tr>
+    </table>
+    <p class="note">Dates above are calculated from Fasika (Easter) 2026 and the Ethiopian calendar; exact observance can vary slightly by parish, so please confirm against St. Gabriel's own calendar.</p>
   </div>
 
-  <h2>What I'm into outside of work</h2>
-  <div class="placeholder">Coming soon — tell me what you'd like here (hobbies, interests, favorite things) and I'll fill it in.</div>
+  <h2 id="family">My Brother Yared, Fatherhood, and Faith</h2>
+  <div class="card">
+    <p>My brother Yared is everything I could hope for in a brother, and honestly, he's close to perfect in my eyes. He's been at the top of his class since we were kids, intelligent and hardworking in a way that never surprised anyone who knew him growing up. He earned his degree in electrical engineering from the University of Maryland and is now a manager at American Electric Power. Watching him become the person he is today is one of the quiet joys of my life.</p>
+    <p>I have so many reasons to thank God, and when I think about Yared and my daughter Liya, I'm reminded of just how deeply He loves me. They are two of the clearest blessings in my life.</p>
+    <p>Becoming Liya's father changed the way I see everything. She's 8 now, and being her dad has given me a different sense of purpose than anything else I've done. God comes first in my life, and I believe it's my responsibility to help instill that same faith in her as she grows. I don't take that lightly, it's one of the things I care most about getting right.</p>
+  </div>
 
-  <h2>Say hi</h2>
-  <div class="placeholder">Coming soon — let me know how you'd like people to reach you (email, phone, etc.).</div>
+  <h2 id="podcast">My Podcast</h2>
+  <div class="card">
+    <p>I'm in the early stages of building a podcast, and I want it to reflect the different parts of my life rather than just one. The plan is to move between a few themes I actually live: cybersecurity made understandable for everyday people, the operational excellence and Lean Six Sigma thinking I've built my career on, my Ethiopian Orthodox faith and heritage, and the experience of raising my daughter Liya. It's a mix because that's genuinely how my life looks, not because I couldn't pick one lane.</p>
+    <div class="placeholder">Coming soon: podcast name, format, episode length, and launch timing. For now, consider this "a podcast is in the works."</div>
+  </div>
+
+  <h2 id="work">Work and Accomplishments</h2>
+  <div class="card">
+    <p>My professional path includes operational excellence work at Honeywell and PIP Global Safety, and my education: a B.S. in Cybersecurity from Franklin University, completed in January 2026 with summa cum laude honors and a 3.94 GPA, and an Associate Degree in Natural Science from Columbus State Community College.</p>
+    <p>At Honeywell, I helped improve a picking process, raising the reported rate from 7 to 11 lines per hour, with estimated savings of about $440,000.</p>
+    <div class="placeholder">Coming soon: details on the business-continuity shipping-label process and the Bravo Award, once confirmed.</div>
+  </div>
+
+  <h2 id="interests">Interests and What I'm Building</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>Photography</li>
+      <li>Lifelong learning</li>
+      <li>Cybersecurity</li>
+      <li>Developing the podcast</li>
+    </ul>
+  </div>
+
+  <h2 id="contact">Photos, Contact, and Social Links</h2>
+  <div class="placeholder">Coming soon: photos, preferred contact method, and any social links you'd like public.</div>
 
   <hr>
   <footer>Thanks for stopping by. — Samra</footer>
